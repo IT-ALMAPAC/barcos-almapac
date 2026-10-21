@@ -125,14 +125,13 @@ export default function LoginPage() {
         
         let redirectPath = '/traslados'
         if (result.user.rol === 'admin') redirectPath = '/admin'
-        else if (result.user.rol === 'pesador') redirectPath = '/admin'
+        else if (result.user.rol === 'pesador') redirectPath = '/pesador'
         else if (result.user.rol === 'envasador') redirectPath = '/envasador'
         else if (result.user.rol === 'electricista') redirectPath = '/electricista'
         else if (result.user.rol === 'chequero') redirectPath = '/chequero'
         else if (result.user.rol === 'chequeronica') redirectPath = '/chequeronica'
         else if (result.user.rol === 'encargado_inventario') redirectPath = '/encargado-inventario'
 
-        
         router.push(redirectPath)
       } else {
         addLog(`❌ Login fallido: ${result.error}`, 'error')
@@ -304,7 +303,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.02] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-3"
             >
               {loading ? (
                 <>
